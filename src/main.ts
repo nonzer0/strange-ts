@@ -19,7 +19,7 @@ const giphyApiKey = "PE24ajuCVtA2Gvm82Al1jMoJe6F3JgW6";
 
 const countDownDate = new Date("May 6, 2022 12:00:01").getTime();
 
-const x = setInterval(() => {
+setInterval(() => {
   const now = new Date().getTime();
   const delta = countDownDate - now;
   const days = Math.floor(delta / (1000 * 60 * 60 * 24));
@@ -31,7 +31,7 @@ const x = setInterval(() => {
   countDown.innerHTML = `${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`;
 }, 1000);
 
-function searchTerms(...terms) {
+function searchTerms(terms: string[]) {
   return terms.reduce((concated, term) => {
     return `${concated}-${term}`;
   }, "");
@@ -40,7 +40,7 @@ function searchTerms(...terms) {
 let scarletWitch = ["scarlet", "witch"];
 // let drstrange = ["doctor", "strange"];
 
-async function fetchRandom(terms) {
+async function fetchRandom(terms: string[]) {
   return window
     .fetch(
       `https://api.giphy.com/v1/gifs/search?api_key=${giphyApiKey}&q=${searchTerms(
@@ -52,12 +52,12 @@ async function fetchRandom(terms) {
     );
 }
 
-const setHtmlById = (elId: string, url: string) => {
-  const el = document.getElementById(elId)!;
-  return (el.innerHTML = imgMarkup(url));
-};
+// const setHtmlById = (elId: string, url: string) => {
+//   const el = document.getElementById(elId)!;
+//   return (el.innerHTML = imgMarkup(url));
+// };
 
-const imgMarkup = (url: string) => `<img src=${url} alt='gif' />`;
+// const imgMarkup = (url: string) => `<img src=${url} alt='gif' />`;
 
 fetchRandom(scarletWitch)
   .then((res) => {
