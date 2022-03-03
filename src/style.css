@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
 
+
+:root {
+  --bluebell: #1fa2e0;
+  --lt-gray: #5d5c5b;
+}
+
 html {
   height: 100vh;
 }
@@ -18,7 +24,7 @@ body {
 
 h1 {
   letter-spacing: 1rem;
-  color: #1fa2e0;
+  color: var(--bluebell);
 }
 
 .message {
@@ -45,7 +51,7 @@ hr {
 }
 
 .postscript {
-  color: #5d5c5b;
+  color: var(--lt-gray);
   font-size: 0.75rem;
   font-weight: normal;
 }
