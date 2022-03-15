@@ -1,9 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
 
+* {
+  box-sizing: border-box;
+}
 
 :root {
-  --bluebell: #1fa2e0;
   --lt-gray: #5d5c5b;
+  --lavender-blue: #d4c2fc;
+  --dark-purple: #22162b;
+  --russian-violet: #451f55;
+  --royal-purple: #724e91;
+  --paradise-pink: #e54f6d;
+  --saffron: #f8c630;
 }
 
 html {
@@ -11,20 +19,15 @@ html {
 }
 
 body {
-  background: rgb(224, 21, 21);
-  background: linear-gradient(
-    90deg,
-    rgba(224, 21, 21, 1) 51%,
-    rgba(172, 69, 252, 1) 100%
-  );
-  color: black;
+  background: var(--paradise-pink);
+  color: var(--dark-purple);
   font-family: "Roboto", sans-serif;
   font-size: 2rem;
 }
 
 h1 {
   letter-spacing: 1rem;
-  color: var(--bluebell);
+  color: var(--royal-purple);
 }
 
 .message {
@@ -50,8 +53,36 @@ hr {
   margin: 1.5rem 0 1.5rem 0;
 }
 
+.new-gif-btn {
+  display: flex;
+  width: 50%;
+  margin: 1rem 0 1rem 0;
+  height: 3rem;
+}
+
+.refresh-gif-btn {
+  width: 100%;
+  border: 2px solid var(--royal-purple);
+  background-color: var(--royal-purple);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.refresh-gif-btn:hover {
+  background-color: var(--lavender-blue);
+  border: 2px solid var(--lavender-blue);
+}
+
+.refresh-gif-btn:active {
+  background-color: var(--lavender-blue);
+  border: 2px solid var(--lavender-blue);
+}
+
 .postscript {
-  color: var(--lt-gray);
+  color: var(--dark-purple);
   font-size: 0.75rem;
   font-weight: normal;
 }
