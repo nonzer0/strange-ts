@@ -1,4 +1,5 @@
 import { fetchRandom } from "./api";
+import { setHtmlById } from "./htmlUtils";
 
 import "./style.css";
 
@@ -18,13 +19,6 @@ setInterval(() => {
 
 let scarletWitch = ["scarlet", "witch"];
 
-const setHtmlById = (elId: string, url: string) => {
-  const el = document.getElementById(elId)!;
-  return (el.innerHTML = imgMarkup(url));
-};
-
-const imgMarkup = (url: string) => `<img src=${url} alt='gif' />`;
-
 const randomGif = () =>
   fetchRandom(scarletWitch)
     .then((res) => {
@@ -34,7 +28,7 @@ const randomGif = () =>
             fixed_height: { url },
           },
         } = res.data[Math.floor(Math.random() * 20)];
-        setHtmlById("rando", url);
+        setHtmlById(document, "rando", url);
       }
     })
     .catch((err) => console.warn("Error", err));
