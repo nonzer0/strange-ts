@@ -7,14 +7,18 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "deploy": "netlify deploy --prod",
-    "deploy:dry": "netlify deploy"
+    "deploy:dry": "netlify deploy",
+    "test": "vitest",
+    "watch": "vitest watch"
   },
   "devDependencies": {
     "@types/node": "^17.0.21",
+    "netlify-cli": "^9.12.2",
     "typescript": "^4.5.4",
     "vite": "^2.8.0",
-    "netlify-cli": "^9.12.2"
+    "vitest": "^0.6.1"
   },
   "dependencies": {
+    "happy-dom": "^2.47.2"
   }
 }
